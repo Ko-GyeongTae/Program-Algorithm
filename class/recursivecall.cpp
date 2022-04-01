@@ -2,14 +2,27 @@
 
 using namespace std;
 
-int sum(int n) {
-    if (n < 2) {
-        return 1;
+int _sum(int n)
+{
+    if (n <= 0)
+    {
+        return 0;
     }
-    return sum(n - 1) + sum(n - 2);
+
+    return n + _sum(n - 1);
 }
 
-int main() {
-    cout << sum(5000) << endl;
+int sum(int n)
+{
+    if (n <= 0)
+    {
+        return 0;
+    }
+    return 2 * sum(n / 2) + ((n + 1) / 2) * ((n + 1) / 2);
+}
+
+int main()
+{
+    cout << sum(600000) << endl;
     return 0;
 }
