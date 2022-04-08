@@ -1,3 +1,5 @@
+# https://atcoder.jp/contests/abc233/submissions/me
+
 L, R = map(int, input().split())
 S = input()
 

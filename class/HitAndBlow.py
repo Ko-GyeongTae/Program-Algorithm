@@ -1,3 +1,5 @@
+# https://atcoder.jp/contests/abc243/submissions/me
+
 N = int(input())
 
 listA = list(map(int, input().split()))
