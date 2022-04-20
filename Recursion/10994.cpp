@@ -1,11 +1,8 @@
 // https://www.acmicpc.net/problem/10994
-
 #include <iostream>
-
 using namespace std;
 
 char Map[400][400];
-
 void draw(int N, int x, int y)
 {
     if (N == 1)
@@ -15,14 +12,12 @@ void draw(int N, int x, int y)
     }
 
     int len = 4 * (N - 1) + 1;
-
     // X
     for (int j = y; j < y + len; j++)
     {
         Map[x][j] = '*';
         Map[x + len - 1][j] = '*';
     }
-
     // Y
     for (int i = x; i < x + len; i++)
     {
