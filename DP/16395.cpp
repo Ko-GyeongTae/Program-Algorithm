@@ -1,10 +1,9 @@
-// https://www.acmicpc.net/problem/15489
+// https://www.acmicpc.net/problem/16395
 
 #include <iostream>
 using namespace std;
 
-int pascal[31][31], R, C, W;
-long long sum = 0;
+int pascal[31][31], n, k;
 int main()
 {
 
@@ -17,15 +16,9 @@ int main()
             pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
     }
 
-    cin >> R >> C >> W;
+    cin >> n >> k;
 
-    for (int i = 0; i < W; i++)
-        for (int j = 0; j < i + 1; j++)
-        {
-            sum += pascal[R - 1 + i][C - 1 + j];
-        }
-
-    cout << sum;
+    cout << pascal[n - 1][k - 1];
 
     return 0;
 }
