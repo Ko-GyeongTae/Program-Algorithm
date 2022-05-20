@@ -1,25 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    int N, tmp, *arr;
+int main()
+{
+    int N = 9, max, index, arr[1000001];
 
-    scanf("%d", &N);
-    arr = (int*)malloc(sizeof(int) * N);
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         scanf("%d", &arr[i]);
     }
 
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < i; j++) {
-            if (arr[i] < arr[j]) {
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
+    max = arr[0];
+
+    for (int i = 0; i < N; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+            index = i;
         }
     }
 
-    printf("%d %d\n", arr[0], arr[N - 1]);
+    printf("%d\n%d\n", max, index + 1);
     return 0;
 }

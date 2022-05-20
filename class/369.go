@@ -1,28 +1,27 @@
 package main
- 
+
 import "fmt"
 
-func in_array(val int, array []int) bool {
-    for _, v := range array {
-        if val == v {
-            return true
-        }   
-    }
+func recursive(x int) int {
+    if x < 1 {
+		return 0
+	}
 
-    return false
+    isTrue := 0;
+    if x % 10 == 3 || x % 10 == 6 || x % 10 == 9 {
+		isTrue=1	
+	}
+
+    return recursive(x/10) + isTrue;
 }
  
 func main() {
-	Xlist := []int{3, 6, 9}
     var N int
+	cnt := 0
 	fmt.Scanln(&N)
 
 	for i := 1; i <= N; i++ {
-		if in_array(i % 10, Xlist) || in_array(i / 10, Xlist) {
-			fmt.Print("X ")
-		} else {
-			fmt.Printf("%d ", i)
-		}
+		cnt += recursive(i)
 	}
-	fmt.Print("\n")
+	fmt.Print(cnt + '\n')
 }
