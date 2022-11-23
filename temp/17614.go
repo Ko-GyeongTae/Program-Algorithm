@@ -1,5 +1,5 @@
-package main
- 
+package algorithm
+
 import "fmt"
 
 func in_array(val int) bool {
